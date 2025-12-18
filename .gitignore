@@ -1,0 +1,44 @@
+# macOS metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+
+# Editor folders
+.vscode/
+.idea/
+.history/
+
+# Verilator build outputs
+obj_dir/
+logs/
+
+# Waveform dumps
+*.vcd
+
+# C/C++ build artifacts
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+*.d
+*.out
+*.exe
+a.out
+
+# Coverage files
+*.gcno
+*.gcda
+*.gcov
+
+# Temporary and swap files
+*.tmp
+*.swp
+*.swo
+
+# Misc
+core
+*.log
