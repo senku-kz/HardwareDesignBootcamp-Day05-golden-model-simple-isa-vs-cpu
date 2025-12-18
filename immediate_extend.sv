@@ -6,13 +6,5 @@ module immediate_extend(
 );
     always_comb begin
         imm_out = {4'b0000, imm_in}; // zero-extend by default
-        
-        // if (sign_extend) begin
-        //     // Sign-extend
-        //     imm_out = {{4{imm_in[3]}}, imm_in}; // replicate sign bit
-        // end else begin
-        //     // Zero-extend
-        //     imm_out = {4'b0000, imm_in};
-        // end
     end
 endmodule
