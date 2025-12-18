@@ -138,12 +138,12 @@ module main(
             end
             
             2'b11: begin
-                // Branch: BNER0 (Branch if rs2 != 0)
-                // If rs2 != 0, then PC = branch_addr
+                // Branch: BNER0
+                // If r0 > rs2, then PC = branch_addr else PC increments
                 reg_we = 0;  // No register write
-                
-                // Check if rs2 is not zero
-                if (reg_rs2_data != 0) begin
+
+                // Compare r0 (rd_out) against rs2 to decide branch
+                if (reg_rd_data > reg_rs2_data) begin
                     pc_opcode = 2'b11;          // Enable branch
                     pc_set_value = branch_addr; // Set PC to branch target
                 end else begin
