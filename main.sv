@@ -13,7 +13,13 @@ Architecture:
 
 module main(
     input logic clk,
-    input logic reset
+    input logic reset,
+    // Debug outputs for testing
+    output logic [3:0] pc_debug,
+    output logic [7:0] reg0_debug,
+    output logic [7:0] reg1_debug,
+    output logic [7:0] reg2_debug,
+    output logic [7:0] reg3_debug
 );
 
     // ========== Signals ==========
@@ -94,7 +100,11 @@ module main(
         .wd(reg_wd),
         .rd_out(reg_rd_data),
         .rs1_out(reg_rs1_data),
-        .rs2_out(reg_rs2_data)
+        .rs2_out(reg_rs2_data),
+        .reg0_out(reg0_debug),
+        .reg1_out(reg1_debug),
+        .reg2_out(reg2_debug),
+        .reg3_out(reg3_debug)
     );
     
     // 6. ALU
@@ -106,6 +116,9 @@ module main(
         .zero_flag(alu_zero_flag)
     );
     
+    
+    // ========== Debug Outputs ==========
+    assign pc_debug = pc_out;
     
     // ========== Control Logic ==========
     
